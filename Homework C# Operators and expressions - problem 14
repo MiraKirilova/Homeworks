@@ -1,0 +1,25 @@
+using System;
+
+namespace ModifyABit
+{
+    class ModifyABit
+    {
+        static void Main()
+        {
+            Console.Write("Enter your number in decimal format: ");
+            int number = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter the position you want to change: ");
+            int position = int.Parse(Console.ReadLine());
+
+            Console.Write("Entre the bit value you want to use (0 or 1): ");
+            int value = int.Parse(Console.ReadLine());
+
+            int mask = value == 1 ? (1 << position) : ~(1<<position); 
+
+            int result = mask == 1 ? (number | mask) : (number & mask);
+
+            Console.WriteLine(result);
+        }
+    }
+}
